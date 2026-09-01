@@ -966,7 +966,7 @@ const html = `
 
                 if(data.success && Object.keys(data.redeems).length > 0) {
                     for(let [code, val] of Object.entries(data.redeems)) {
-                        listContainer.innerHTML += '
+                        listContainer.innerHTML += `
                             <div class="flex justify-between items-center bg-slate-900/80 p-2 rounded-xl border border-amber-500/20">
                                 <div>
                                     <span class="text-amber-300 font-bold">${code}</span>
@@ -974,7 +974,7 @@ const html = `
                                 </div>
                                 <button onclick="handleDeleteRedeem('${code}')" class="px-2 py-1 bg-rose-500/20 hover:bg-rose-500/40 text-rose-300 rounded border border-rose-500/30">Hapus</button>
                             </div>
-                        ';
+                        `;
                     }
                 } else {
                     listContainer.innerHTML = '<p class="text-slate-500 italic">Belum ada kode aktif.</p>';
