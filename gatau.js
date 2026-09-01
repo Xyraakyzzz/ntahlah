@@ -790,7 +790,7 @@ const html = `
                                     <span class="text-amber-300 font-bold">\${uname}</span>
                                     <span class="text-slate-400 block text-[9px]">Expired: \${new Date(val.vipUntil).toLocaleDateString()}</span>
                                 </div>
-                                <button onclick="handleRemoveVip('${uname}')" class="px-2 py-1 bg-rose-500/25 hover:bg-rose-500/40 text-rose-300 rounded border border-rose-500/30">Hapus</button>
+                                <button onclick="handleRemoveVip('\${uname}')" class="px-2 py-1 bg-rose-500/25 hover:bg-rose-500/40 text-rose-300 rounded border border-rose-500/30">Hapus</button>
                             </div>
                         \`;
                     }
@@ -829,10 +829,10 @@ const html = `
                         container.innerHTML += \`
                             <div class="p-3 rounded-xl bg-slate-900/60 border border-cyan-500/20 space-y-1">
                                 <div class="flex justify-between items-center text-cyan-300 font-bold">
-                                    <span>${val.title}</span>
-                                    <span class="text-[9px] text-slate-400 font-mono">${new Date(val.timestamp).toLocaleDateString()}</span>
+                                    <span>\${val.title}</span>
+                                    <span class="text-[9px] text-slate-400 font-mono">\${new Date(val.timestamp).toLocaleDateString()}</span>
                                 </div>
-                                <p class="text-slate-300 whitespace-pre-line text-[11px] leading-relaxed">${val.content}</p>
+                                <p class="text-slate-300 whitespace-pre-line text-[11px] leading-relaxed">\${val.content}</p>
                             </div>
                         \`;
                     }
@@ -856,12 +856,12 @@ const html = `
                         container.innerHTML += \`
                             <div class="flex justify-between items-center bg-slate-900/80 p-2 rounded-xl border border-amber-500/20">
                                 <div class="truncate mr-2">
-                                    <span class="text-amber-300 font-bold block truncate">${val.title}</span>
-                                    <span class="text-slate-400 truncate block">${val.content.substring(0, 25)}...</span>
+                                    <span class="text-amber-300 font-bold block truncate">\${val.title}</span>
+                                    <span class="text-slate-400 truncate block">\${val.content.substring(0, 25)}...</span>
                                 </div>
                                 <div class="flex gap-1 shrink-0">
-                                    <button onclick="editAnnouncement('${id}', '${encodeURIComponent(val.title)}', '${encodeURIComponent(val.content)}')" class="px-2 py-1 bg-sky-500/20 hover:bg-sky-500/40 text-sky-300 rounded border border-sky-500/30">Edit</button>
-                                    <button onclick="deleteAnnouncement('${id}')" class="px-2 py-1 bg-rose-500/20 hover:bg-rose-500/40 text-rose-300 rounded border border-rose-500/30">Hapus</button>
+                                    <button onclick="editAnnouncement('\${id}', '\${encodeURIComponent(val.title)}', '\${encodeURIComponent(val.content)}')" class="px-2 py-1 bg-sky-500/20 hover:bg-sky-500/40 text-sky-300 rounded border border-sky-500/30">Edit</button>
+                                    <button onclick="deleteAnnouncement('\${id}')" class="px-2 py-1 bg-rose-500/20 hover:bg-rose-500/40 text-rose-300 rounded border border-rose-500/30">Hapus</button>
                                 </div>
                             </div>
                         \`;
@@ -969,10 +969,10 @@ const html = `
                         listContainer.innerHTML += \`
                             <div class="flex justify-between items-center bg-slate-900/80 p-2 rounded-xl border border-amber-500/20">
                                 <div>
-                                    <span class="text-amber-300 font-bold">${code}</span>
-                                    <span class="text-slate-400 block text-[9px]">Kuota: ${val.totalQuota} | Klaim: ${val.claimedCount}/${val.maxClaims}</span>
+                                    <span class="text-amber-300 font-bold">\${code}</span>
+                                    <span class="text-slate-400 block text-[9px]">Kuota: \${val.totalQuota} | Klaim: \${val.claimedCount}/\${val.maxClaims}</span>
                                 </div>
-                                <button onclick="handleDeleteRedeem('${code}')" class="px-2 py-1 bg-rose-500/20 hover:bg-rose-500/40 text-rose-300 rounded border border-rose-500/30">Hapus</button>
+                                <button onclick="handleDeleteRedeem('\${code}')" class="px-2 py-1 bg-rose-500/20 hover:bg-rose-500/40 text-rose-300 rounded border border-rose-500/30">Hapus</button>
                             </div>
                         \`;
                     }
