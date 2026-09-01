@@ -795,7 +795,7 @@ const html = `
                         `;
                     }
                 } else {
-                    container.innerHTML = "<p class="text-slate-500 italic">Tidak ada akun VIP aktif.</p>";
+                    container.innerHTML = `<p class="text-slate-500 italic">Tidak ada akun VIP aktif.</p>`;
                 }
             } catch(e) {}
         }
@@ -853,7 +853,7 @@ const html = `
                 if (data.success && Object.keys(data.announcements).length > 0) {
                     const entries = Object.entries(data.announcements).sort((a,b) => b[1].timestamp - a[1].timestamp);
                     for (let [id, val] of entries) {
-                        container.innerHTML += '
+                        container.innerHTML += `
                             <div class="flex justify-between items-center bg-slate-900/80 p-2 rounded-xl border border-amber-500/20">
                                 <div class="truncate mr-2">
                                     <span class="text-amber-300 font-bold block truncate">${val.title}</span>
@@ -864,7 +864,7 @@ const html = `
                                     <button onclick="deleteAnnouncement('${id}')" class="px-2 py-1 bg-rose-500/20 hover:bg-rose-500/40 text-rose-300 rounded border border-rose-500/30">Hapus</button>
                                 </div>
                             </div>
-                        ';
+                        `;
                     }
                 } else {
                     container.innerHTML = '<p class="text-slate-500 italic">Belum ada informasi.</p>';
