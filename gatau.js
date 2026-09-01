@@ -784,7 +784,7 @@ const html = `
 
                 if (data.success && Object.keys(data.vipUsers).length > 0) {
                     for (let [uname, val] of Object.entries(data.vipUsers)) {
-                        container.innerHTML +="
+                        container.innerHTML +=`
                             <div class="flex justify-between items-center bg-slate-900/80 p-2 rounded-xl border border-amber-500/20">
                                 <div>
                                     <span class="text-amber-300 font-bold">${uname}</span>
@@ -792,7 +792,7 @@ const html = `
                                 </div>
                                 <button onclick="handleRemoveVip('${uname}')" class="px-2 py-1 bg-rose-500/25 hover:bg-rose-500/40 text-rose-300 rounded border border-rose-500/30">Hapus</button>
                             </div>
-                        ";
+                        `;
                     }
                 } else {
                     container.innerHTML = "<p class="text-slate-500 italic">Tidak ada akun VIP aktif.</p>";
@@ -826,7 +826,7 @@ const html = `
                 if (data.success && Object.keys(data.announcements).length > 0) {
                     const entries = Object.entries(data.announcements).sort((a,b) => b[1].timestamp - a[1].timestamp);
                     for (let [id, val] of entries) {
-                        container.innerHTML +='
+                        container.innerHTML +=`
                             <div class="p-3 rounded-xl bg-slate-900/60 border border-cyan-500/20 space-y-1">
                                 <div class="flex justify-between items-center text-cyan-300 font-bold">
                                     <span>${val.title}</span>
@@ -834,7 +834,7 @@ const html = `
                                 </div>
                                 <p class="text-slate-300 whitespace-pre-line text-[11px] leading-relaxed">${val.content}</p>
                             </div>
-                        ';
+                        `;
                     }
                 } else {
                     container.innerHTML = '<p class="text-slate-500 italic">Belum ada informasi terbaru.</p>';
